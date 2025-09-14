@@ -353,12 +353,14 @@
                 <StackPanel Orientation="Vertical" Classes="field-container">
                     <TextBlock Text="Amount: *" Classes="field-label" />
                     <TextBox Classes="modern-input"
+                             Text="{Binding Amount}"
                              Watermark="Amount of your expense..."/>
                 </StackPanel>
                 
                 <StackPanel Orientation="Vertical" Classes="field-container">
                     <TextBlock Text="Category: *" Classes="field-label" />
-                    <ComboBox Classes="modern-combo">
+                    <ComboBox Classes="modern-combo"
+                              SelectedItem="{Binding Category}">
                         <!-- Recent/Frequent -->
                         <ComboBoxItem IsEnabled="False" Classes="combo-item"> Recently Used </ComboBoxItem>
                         <ComboBoxItem Classes="combo-item">☕ Coffee</ComboBoxItem>
@@ -368,12 +370,16 @@
     
                         <!-- Essential Categories -->
                         <ComboBoxItem Classes="combo-item">🍕 Food - Dining</ComboBoxItem>
-                        <ComboBoxItem Classes="combo-item">🚗 Transportation</ComboBoxItem>
+                        <ComboBoxItem Classes="combo-item">🍽 Groceries</ComboBoxItem>
+                        <ComboBoxItem Classes="combo-item">💰 Bills - Finance</ComboBoxItem>
+                        <ComboBoxItem Classes="combo-item">🚗 Transportation - Car</ComboBoxItem>
+                        <ComboBoxItem Classes="combo-item">💰 Salary - Income</ComboBoxItem>
                         <ComboBoxItem Classes="combo-item">🏠 Housing</ComboBoxItem>
                         <ComboBoxItem Classes="combo-item">👕 Shopping</ComboBoxItem>
+                        <ComboBoxItem Classes="combo-item">💰 Salary - Income</ComboBoxItem>
+                        <ComboBoxItem Classes="combo-item">📈 Investment</ComboBoxItem>
                         <ComboBoxItem Classes="combo-item">🎬 Entertainment</ComboBoxItem>
-                        <ComboBoxItem Classes="combo-item">💊 Healthcare</ComboBoxItem>
-                        <ComboBoxItem Classes="combo-item">💰 Bills - Finance</ComboBoxItem>
+                        <ComboBoxItem Classes="combo-item">🏥 Healthcare</ComboBoxItem>
                         <ComboBoxItem Classes="combo-item">✨ Other</ComboBoxItem>
     
                         <Separator />
@@ -384,12 +390,14 @@
                 <StackPanel Orientation="Vertical" Classes="field-container">
                     <TextBlock Text="Name: *" Classes="field-label" />
                     <TextBox Classes="modern-input"
+                             Text="{Binding Name}"
                              Watermark="Name of your expense..."/>
                 </StackPanel>
                 
                 <StackPanel Orientation="Vertical" Classes="field-container">
                     <TextBlock Text="Note: " Classes="field-label" />
                     <TextBox Classes="large-input"
+                             Text="{Binding Notes}"
                              Watermark="Add a note as a reminder of this expense..."/>
                 </StackPanel>
                 
@@ -411,18 +419,21 @@
                 <StackPanel Orientation="Vertical" Classes="field-container">
                     <TextBlock Text="Amount: *" Classes="field-label" />
                     <TextBox Classes="modern-input"
+                             Text="{Binding Amount}"
                              Watermark="Amount of your income..."/>
                 </StackPanel>
                 
                 <StackPanel Orientation="Vertical" Classes="field-container">
                     <TextBlock Text="Name: *" Classes="field-label" />
                     <TextBox Classes="modern-input"
+                             Text="{Binding Name}"
                              Watermark="Name of your income..."/>
                 </StackPanel>
                 
                 <StackPanel Orientation="Vertical" Classes="field-container">
                     <TextBlock Text="Note: " Classes="field-label" />
                     <TextBox Classes="large-input"
+                             Text="{Binding Notes}"
                              Watermark="Add a note as a reminder of this income..."/>
                 </StackPanel>
                 

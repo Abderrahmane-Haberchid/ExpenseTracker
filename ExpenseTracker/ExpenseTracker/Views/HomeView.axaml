@@ -364,17 +364,11 @@
                                                     Width="56" 
                                                     Height="56"
                                                     VerticalAlignment="Center">
-                                                <Grid>
-                                                    <Ellipse Fill="{StaticResource PrimaryLightBrush}"
-                                                             Width="32"
-                                                             Height="32"
-                                                             Opacity="0.2" />
-                                                    <Image Source="{Binding CategoryIcon}" 
-                                                           Width="28" 
-                                                           Height="28"
+                                                
+                                                <TextBlock Text="{Binding CategoryIcon}" 
+                                                           FontSize="30"
                                                            VerticalAlignment="Center"
                                                            HorizontalAlignment="Center" />
-                                                </Grid>
                                             </Border>
                                             
                                             <!-- Enhanced Transaction Details -->
@@ -404,23 +398,10 @@
                                                            FontFamily="{StaticResource DisplayFont}"
                                                            FontSize="15" 
                                                            FontWeight="Bold" 
-                                                           Foreground="{Binding IsExpense}" 
+                                                           Foreground="{Binding TypeColor}" 
                                                            HorizontalAlignment="Right" />
-                                                <!-- <Border Background="{Binding IsExpense}" -->
-                                                <!--         CornerRadius="12" -->
-                                                <!--         Padding="8,4"> -->
-                                                <!--     <StackPanel Orientation="Horizontal" Spacing="4"> -->
-                                                <!--         <TextBlock Text="{Binding IsExpense}"  -->
-                                                <!--                    FontSize="10" /> -->
-                                                <!--         <TextBlock Text="{Binding IsExpense}"  -->
-                                                <!--                    FontFamily="{StaticResource TextFont}" -->
-                                                <!--                    FontSize="10"  -->
-                                                <!--                    FontWeight="SemiBold" -->
-                                                <!--                    Foreground="White" /> -->
-                                                <!--     </StackPanel> -->
-                                                <!-- </Border> -->
                                             </StackPanel>
-                                        </Grid>
+                                        </Grid> 
                                     </Expander.Header>
 
                                     <!-- Premium Expanded Content -->
@@ -430,8 +411,35 @@
                                             Padding="10">
                                         <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="16">
                                             
+                                             <!-- Transaction Name and Notes -->
+                                            <StackPanel Grid.Row="0" Spacing="8">
+                                                <!-- Transaction Name -->
+                                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                                    <Border Background="{StaticResource PrimaryLightBrush}"
+                                                            CornerRadius="12"
+                                                            Padding="8,4">
+                                                        <TextBlock Text="{Binding Name}" 
+                                                                   FontFamily="{StaticResource TextFont}"
+                                                                   FontSize="11"
+                                                                   FontWeight="Medium"
+                                                                   Foreground="White" />
+                                                    </Border>
+                                                </StackPanel>
+                                                <TextBlock Text="💭 Notes" 
+                                                           FontFamily="{StaticResource TextFont}"
+                                                           FontSize="12" 
+                                                           FontWeight="SemiBold"
+                                                           Foreground="{StaticResource TextTertiaryBrush}" />
+                                                <TextBlock Text="Monthly grocery shopping at downtown market" 
+                                                           FontFamily="{StaticResource TextFont}"
+                                                           FontSize="14"
+                                                           FontWeight="Regular"
+                                                           Foreground="{StaticResource TextSecondaryBrush}"
+                                                           TextWrapping="Wrap" />
+                                            </StackPanel>
+                                            
                                             <!-- Transaction Metadata -->
-                                            <Grid Grid.Row="0" ColumnDefinitions="*,*" ColumnSpacing="16">
+                                            <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="16">
                                                 <StackPanel Grid.Column="0" Spacing="6">
                                                     <TextBlock Text="📅 Date - Time" 
                                                                FontFamily="{StaticResource TextFont}"
@@ -463,31 +471,15 @@
                                                 </StackPanel>
                                             </Grid>
                                             
-                                            <!-- Action Buttons with Modern Design -->
-                                            <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto" ColumnSpacing="12">
+                                            <!-- Delete Button -->
+                                            <Grid Grid.Row="2" ColumnDefinitions="Auto,Auto" ColumnSpacing="12">
+                                                
                                                 <Button Grid.Column="0" 
                                                         Classes="neomorphic"
-                                                        Background="{StaticResource PrimaryGradient}"
-                                                        Foreground="White"
-                                                        Width="90"
-                                                        HorizontalAlignment="Center"
-                                                        Padding="5, 5">
-                                                    <StackPanel Orientation="Horizontal" Spacing="8">
-                                                        <TextBlock Text="✏️" FontSize="14" />
-                                                        <TextBlock Text="Edit" 
-                                                                   FontFamily="{StaticResource TextFont}"
-                                                                   FontSize="14"
-                                                                   FontWeight="SemiBold" />
-                                                    </StackPanel>
-                                                </Button>
-                                                
-                                                <Button Grid.Column="1" 
-                                                        Classes="neomorphic"
-                                                        Background="Transparent"
-                                                        Foreground="{StaticResource ExpenseBrush}"
+                                                        Background="{StaticResource ExpenseBrush}"
                                                         BorderBrush="{StaticResource ExpenseBrush}"
+                                                        Foreground="white"
                                                         BorderThickness="2"
-                                                        Width="100"
                                                         HorizontalAlignment="Center"
                                                         Padding="5, 5">
                                                     <StackPanel Orientation="Horizontal" Spacing="8">
@@ -499,43 +491,6 @@
                                                     </StackPanel>
                                                 </Button>
                                             </Grid>
-                                            
-                                            <!-- Transaction Notes & Tags -->
-                                            <StackPanel Grid.Row="2" Spacing="8">
-                                                <TextBlock Text="💭 Notes" 
-                                                           FontFamily="{StaticResource TextFont}"
-                                                           FontSize="12" 
-                                                           FontWeight="SemiBold"
-                                                           Foreground="{StaticResource TextTertiaryBrush}" />
-                                                <TextBlock Text="Monthly grocery shopping at downtown market" 
-                                                           FontFamily="{StaticResource TextFont}"
-                                                           FontSize="14"
-                                                           FontWeight="Regular"
-                                                           Foreground="{StaticResource TextSecondaryBrush}"
-                                                           TextWrapping="Wrap" />
-                                                           
-                                                <!-- Tags -->
-                                                <StackPanel Orientation="Horizontal" Spacing="8">
-                                                    <Border Background="{StaticResource PrimaryLightBrush}"
-                                                            CornerRadius="12"
-                                                            Padding="8,4">
-                                                        <TextBlock Text="#essential" 
-                                                                   FontFamily="{StaticResource TextFont}"
-                                                                   FontSize="11"
-                                                                   FontWeight="Medium"
-                                                                   Foreground="White" />
-                                                    </Border>
-                                                    <Border Background="{StaticResource AccentBrush}"
-                                                            CornerRadius="12"
-                                                            Padding="8,4">
-                                                        <TextBlock Text="#monthly" 
-                                                                   FontFamily="{StaticResource TextFont}"
-                                                                   FontSize="11"
-                                                                   FontWeight="Medium"
-                                                                   Foreground="White" />
-                                                    </Border>
-                                                </StackPanel>
-                                            </StackPanel>
                                         </Grid>
                                     </Border>
                                 </Expander>

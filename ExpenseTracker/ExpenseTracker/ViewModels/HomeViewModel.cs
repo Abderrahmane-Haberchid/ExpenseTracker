@@ -1,7 +1,8 @@
 using System;
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
-using ExpenseTracker.Dtos;
+using ExpenseTracker.Enum;
+using ExpenseTracker.Models;
 
 namespace ExpenseTracker.ViewModels;
 
@@ -14,69 +15,90 @@ public partial class HomeViewModel : ViewModelBase
     [ObservableProperty]
     private string _recentTransactionText;
 
-    public ObservableCollection<TransactionViewModel> RecentTransactions { get; } = new();
+    public ObservableCollection<TransactionModel> RecentTransactions { get; } = new();
     
     public HomeViewModel()
     {
         // Populate with dummy data for demonstration
-        RecentTransactions.Add(new TransactionViewModel
+        RecentTransactions.Add(new TransactionModel
         {
             Name = "Groceries",
             Amount = 150.75m,
             Category = "Food",
-            CategoryIcon = "avares://ExpenseTracker/Assets/Icons/food.png",
             Date = DateTime.Now,
-            IsExpense = true,
+            Type = TransactionType.EXPENSE,
             Notes = "This is monthly grocery shoping"
         });
-        RecentTransactions.Add(new TransactionViewModel
+        RecentTransactions.Add(new TransactionModel
         {
-            Name = "Groceries",
+            Name = "Argent Loyer",
             Amount = 150.75m,
             Category = "Food",
-            CategoryIcon = "avares://ExpenseTracker/Assets/Icons/food.png",
             Date = DateTime.Now,
-            IsExpense = true,
+            Type = TransactionType.INCOME,
             Notes = "This is monthly grocery shoping"
         });
-        RecentTransactions.Add(new TransactionViewModel
+        RecentTransactions.Add(new TransactionModel
         {
-            Name = "Groceries",
+            Name = "Salaire Job",
             Amount = 150.75m,
             Category = "Food",
-            CategoryIcon = "avares://ExpenseTracker/Assets/Icons/food.png",
             Date = DateTime.Now,
-            IsExpense = true,
+            Type = TransactionType.INCOME,
             Notes = "This is monthly grocery shoping"
         });
-        RecentTransactions.Add(new TransactionViewModel
+        RecentTransactions.Add(new TransactionModel
         {
             Name = "Groceries",
             Amount = 150.75m,
             Category = "Food",
-            CategoryIcon = "avares://ExpenseTracker/Assets/Icons/food.png",
             Date = DateTime.Now,
-            IsExpense = true,
+            Type = TransactionType.EXPENSE,
             Notes = "This is monthly grocery shoping"
         });
-        RecentTransactions.Add(new TransactionViewModel
+        RecentTransactions.Add(new TransactionModel
         {
             Name = "Groceries",
             Amount = 150.75m,
             Category = "Food",
-            CategoryIcon = "avares://ExpenseTracker/Assets/Icons/food.png",
             Date = DateTime.Now,
-            IsExpense = true,
+            Type = TransactionType.EXPENSE,
             Notes = "This is monthly grocery shoping"
         });
-        RecentTransactions.Add(new TransactionViewModel
+        RecentTransactions.Add(new TransactionModel
         {
             Name = "Groceries",
             Amount = 150.75m,
             Category = "Food",
-            CategoryIcon = "avares://ExpenseTracker/Assets/Icons/food.png",
             Date = DateTime.Now,
-            IsExpense = true,
+            Type = TransactionType.EXPENSE,
+            Notes = "This is monthly grocery shoping"
+        });
+        RecentTransactions.Add(new TransactionModel
+        {
+            Name = "Groceries",
+            Amount = 150.75m,
+            Category = "Food",
+            Date = DateTime.Now,
+            Type = TransactionType.EXPENSE,
+            Notes = "This is monthly grocery shoping"
+        });
+        RecentTransactions.Add(new TransactionModel
+        {
+            Name = "Groceries",
+            Amount = 150.75m,
+            Category = "Food",
+            Date = DateTime.Now,
+            Type = TransactionType.EXPENSE,
+            Notes = "This is monthly grocery shoping"
+        });
+        RecentTransactions.Add(new TransactionModel
+        {
+            Name = "Groceries",
+            Amount = 150.75m,
+            Category = "Food",
+            Date = DateTime.Now,
+            Type = TransactionType.EXPENSE,
             Notes = "This is monthly grocery shoping"
         });
         
