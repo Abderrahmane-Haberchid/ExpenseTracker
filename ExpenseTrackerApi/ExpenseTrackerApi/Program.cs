@@ -1,11 +1,26 @@
+using DefaultNamespace;
+using ExpenseTrackerApi.Mappers;
+using ExpenseTrackerApi.Services;
+using ExpenseTrackerApi.Services.Impl;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options => {});
+
+//Adding created services To DI
+
+builder.Services.AddScoped<TransactionService, TransactionServiceImpl>();
+builder.Services.AddScoped<TransactionMapper>();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 var app = builder.Build();
 
@@ -13,7 +28,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger API V1");
+    });
 }
 
 app.UseHttpsRedirection();

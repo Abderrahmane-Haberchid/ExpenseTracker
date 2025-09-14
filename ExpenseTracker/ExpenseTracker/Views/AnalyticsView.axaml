@@ -1,0 +1,254 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:ExpenseTracker.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="viewModels:AnalyticsViewModel"
+             x:Class="ExpenseTracker.Views.AnalyticsView">
+    
+      <Design.DataContext>
+    <viewModels:AnalyticsViewModel />
+  </Design.DataContext>
+
+  <ScrollViewer>
+    <StackPanel Spacing="24" Margin="24">
+      
+      <!-- Header -->
+      <StackPanel Spacing="4">
+        <TextBlock Text="Analytics" 
+                   FontSize="28" 
+                   FontWeight="Bold" />
+        <TextBlock Text="Your financial overview" 
+                   FontSize="14" 
+                   Opacity="0.7" />
+      </StackPanel>
+
+      <!-- Quick Stats -->
+      <Grid ColumnDefinitions="*,*,*" ColumnSpacing="16">
+        <Border Grid.Column="0" Background="#F8F9FA" CornerRadius="12" Padding="24">
+          <StackPanel Spacing="8">
+            <TextBlock Text="Income" FontSize="14" Opacity="0.7" />
+            <TextBlock Text="$5,240" FontSize="32" FontWeight="Bold" Foreground="#22C55E" />
+            <TextBlock Text="+12% this month" FontSize="12" Foreground="#22C55E" />
+          </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" Background="#F8F9FA" CornerRadius="12" Padding="24">
+          <StackPanel Spacing="8">
+            <TextBlock Text="Expenses" FontSize="14" Opacity="0.7" />
+            <TextBlock Text="$3,681" FontSize="32" FontWeight="Bold" Foreground="#EF4444" />
+            <TextBlock Text="+5% this month" FontSize="12" Foreground="#EF4444" />
+          </StackPanel>
+        </Border>
+
+        <Border Grid.Column="2" Background="#F8F9FA" CornerRadius="12" Padding="24">
+          <StackPanel Spacing="8">
+            <TextBlock Text="Balance" FontSize="14" Opacity="0.7" />
+            <TextBlock Text="$1,559" FontSize="32" FontWeight="Bold" Foreground="#3B82F6" />
+            <TextBlock Text="30% saved" FontSize="12" Foreground="#3B82F6" />
+          </StackPanel>
+        </Border>
+      </Grid>
+
+      <!-- Period Filter -->
+      <StackPanel Spacing="12">
+        <TextBlock Text="Period" FontWeight="SemiBold" />
+        <StackPanel Orientation="Horizontal" Spacing="8">
+          <Button Content="This Month" Classes="period active" />
+          <Button Content="Last 3 Months" Classes="period" />
+          <Button Content="This Year" Classes="period" />
+          <Button Content="Custom" Classes="period" />
+        </StackPanel>
+      </StackPanel>
+
+      <!-- Main Chart -->
+      <StackPanel Spacing="16">
+        <Grid ColumnDefinitions="*,Auto">
+          <TextBlock Grid.Column="0" Text="Income vs Expenses" FontSize="18" FontWeight="SemiBold" />
+          <ComboBox Grid.Column="1" MinWidth="100" SelectedIndex="0">
+            <ComboBoxItem>Monthly</ComboBoxItem>
+            <ComboBoxItem>Weekly</ComboBoxItem>
+            <ComboBoxItem>Daily</ComboBoxItem>
+          </ComboBox>
+        </Grid>
+
+        <Border Background="White" 
+                CornerRadius="12" 
+                BorderBrush="#E5E7EB" 
+                BorderThickness="1"
+                Height="300">
+          <Grid Margin="24">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Chart Area -->
+            <Border Grid.Row="0" Background="#FAFAFA" CornerRadius="8">
+              <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="8">
+                <Path Data="M3 3v18h18" Stroke="#9CA3AF" StrokeThickness="2" Fill="Transparent" Width="24" Height="24" />
+                <TextBlock Text="Chart will render here" Opacity="0.5" />
+              </StackPanel>
+            </Border>
+
+            <!-- Legend -->
+            <StackPanel Grid.Row="1" 
+                       Orientation="Horizontal" 
+                       HorizontalAlignment="Center" 
+                       Spacing="24" 
+                       Margin="0,16,0,0">
+              <StackPanel Orientation="Horizontal" Spacing="8">
+                <Rectangle Width="16" Height="3" Fill="#22C55E" VerticalAlignment="Center" />
+                <TextBlock Text="Income" />
+              </StackPanel>
+              <StackPanel Orientation="Horizontal" Spacing="8">
+                <Rectangle Width="16" Height="3" Fill="#EF4444" VerticalAlignment="Center" />
+                <TextBlock Text="Expenses" />
+              </StackPanel>
+            </StackPanel>
+          </Grid>
+        </Border>
+      </StackPanel>
+
+      <!-- Categories Breakdown -->
+      <StackPanel Spacing="16">
+        <TextBlock Text="Top Categories" FontSize="18" FontWeight="SemiBold" />
+        
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="24">
+          <!-- Expenses -->
+          <StackPanel Grid.Column="0" Spacing="12">
+            <TextBlock Text="Expenses" FontWeight="SemiBold" Foreground="#EF4444" />
+            <StackPanel Spacing="8">
+              <Grid ColumnDefinitions="*,Auto">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="12">
+                  <Rectangle Width="4" Height="16" Fill="#FF6B6B" VerticalAlignment="Center" />
+                  <TextBlock Text="Food - Dining" VerticalAlignment="Center" />
+                </StackPanel>
+                <TextBlock Grid.Column="1" Text="$841" FontWeight="Medium" VerticalAlignment="Center" />
+              </Grid>
+              
+              <Grid ColumnDefinitions="*,Auto">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="12">
+                  <Rectangle Width="4" Height="16" Fill="#4ECDC4" VerticalAlignment="Center" />
+                  <TextBlock Text="Transportation" VerticalAlignment="Center" />
+                </StackPanel>
+                <TextBlock Grid.Column="1" Text="$650" FontWeight="Medium" VerticalAlignment="Center" />
+              </Grid>
+              
+              <Grid ColumnDefinitions="*,Auto">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="12">
+                  <Rectangle Width="4" Height="16" Fill="#45B7D1" VerticalAlignment="Center" />
+                  <TextBlock Text="Shopping" VerticalAlignment="Center" />
+                </StackPanel>
+                <TextBlock Grid.Column="1" Text="$420" FontWeight="Medium" VerticalAlignment="Center" />
+              </Grid>
+              
+              <Grid ColumnDefinitions="*,Auto">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="12">
+                  <Rectangle Width="4" Height="16" Fill="#FFA07A" VerticalAlignment="Center" />
+                  <TextBlock Text="Entertainment" VerticalAlignment="Center" />
+                </StackPanel>
+                <TextBlock Grid.Column="1" Text="$321" FontWeight="Medium" VerticalAlignment="Center" />
+              </Grid>
+            </StackPanel>
+          </StackPanel>
+
+          <!-- Income -->
+          <StackPanel Grid.Column="1" Spacing="12">
+            <TextBlock Text="Income Sources" FontWeight="SemiBold" Foreground="#22C55E" />
+            <StackPanel Spacing="8">
+              <Grid ColumnDefinitions="*,Auto">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="12">
+                  <Rectangle Width="4" Height="16" Fill="#22C55E" VerticalAlignment="Center" />
+                  <TextBlock Text="Salary" VerticalAlignment="Center" />
+                </StackPanel>
+                <TextBlock Grid.Column="1" Text="$4,800" FontWeight="Medium" VerticalAlignment="Center" />
+              </Grid>
+              
+              <Grid ColumnDefinitions="*,Auto">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="12">
+                  <Rectangle Width="4" Height="16" Fill="#86EFAC" VerticalAlignment="Center" />
+                  <TextBlock Text="Freelance" VerticalAlignment="Center" />
+                </StackPanel>
+                <TextBlock Grid.Column="1" Text="$440" FontWeight="Medium" VerticalAlignment="Center" />
+              </Grid>
+            </StackPanel>
+          </StackPanel>
+        </Grid>
+      </StackPanel>
+
+      <!-- Insights -->
+      <StackPanel Spacing="16">
+        <TextBlock Text="Insights" FontSize="18" FontWeight="SemiBold" />
+        <StackPanel Spacing="12">
+          <Border Background="#FEF3C7" CornerRadius="8" Padding="16">
+            <StackPanel Orientation="Horizontal" Spacing="12">
+              <Path Data="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" 
+                    Stroke="#D97706" 
+                    StrokeThickness="2" 
+                    Fill="Transparent" 
+                    Width="20" 
+                    Height="20"
+                    VerticalAlignment="Top" />
+              <StackPanel>
+                <TextBlock Text="Food expenses are trending up" FontWeight="Medium" />
+                <TextBlock Text="Consider meal planning to reduce dining costs by ~$200/month" 
+                          Opacity="0.8" 
+                          TextWrapping="Wrap" />
+              </StackPanel>
+            </StackPanel>
+          </Border>
+
+          <Border Background="#D1FAE5" CornerRadius="8" Padding="16">
+            <StackPanel Orientation="Horizontal" Spacing="12">
+              <Path Data="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" 
+                    Stroke="#059669" 
+                    StrokeThickness="2" 
+                    Fill="Transparent" 
+                    Width="20" 
+                    Height="20"
+                    VerticalAlignment="Top" />
+              <StackPanel>
+                <TextBlock Text="Great savings rate!" FontWeight="Medium" />
+                <TextBlock Text="You're saving 30% of your income. Keep it up!" 
+                          Opacity="0.8" 
+                          TextWrapping="Wrap" />
+              </StackPanel>
+            </StackPanel>
+          </Border>
+        </StackPanel>
+      </StackPanel>
+
+    </StackPanel>
+  </ScrollViewer>
+
+  <!-- Styles -->
+  <UserControl.Styles>
+    <Style Selector="Button.period">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="BorderBrush" Value="#D1D5DB" />
+      <Setter Property="Padding" Value="16,8" />
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="Foreground" Value="#374151" />
+    </Style>
+
+    <Style Selector="Button.period:pointerover">
+      <Setter Property="Background" Value="#F3F4F6" />
+      <Setter Property="BorderBrush" Value="#9CA3AF" />
+    </Style>
+
+    <Style Selector="Button.period.active">
+      <Setter Property="Background" Value="#3B82F6" />
+      <Setter Property="BorderBrush" Value="#3B82F6" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <Style Selector="Button.period.active:pointerover">
+      <Setter Property="Background" Value="#2563EB" />
+      <Setter Property="BorderBrush" Value="#2563EB" />
+    </Style>
+  </UserControl.Styles>
+
+</UserControl>                

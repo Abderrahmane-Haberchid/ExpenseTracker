@@ -1,0 +1,486 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:ExpenseTracker.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="viewModels:HistoryViewModel"
+             x:Class="ExpenseTracker.Views.HistoryView">
+    
+    <Design.DataContext>
+        <viewModels:HistoryViewModel />
+    </Design.DataContext>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <!-- Header & Filters -->
+    <StackPanel Grid.Row="0" Spacing="24" Margin="24,24,24,0">
+      
+      <!-- Page Header -->
+      <StackPanel Spacing="4">
+        <TextBlock Text="History" 
+                   FontSize="28" 
+                   FontWeight="Bold" />
+        <TextBlock Text="All your transactions" 
+                   FontSize="14" 
+                   Opacity="0.7" />
+      </StackPanel>
+
+      <!-- Quick Stats -->
+      <Grid ColumnDefinitions="*,*,*" ColumnSpacing="16">
+        <Border Grid.Column="0" Background="#F8F9FA" CornerRadius="12" Padding="16">
+          <StackPanel Spacing="4">
+            <TextBlock Text="This Month" FontSize="12" Opacity="0.7" />
+            <TextBlock Text="47 transactions" FontSize="18" FontWeight="SemiBold" />
+          </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" Background="#F8F9FA" CornerRadius="12" Padding="16">
+          <StackPanel Spacing="4">
+            <TextBlock Text="Total Income" FontSize="12" Opacity="0.7" />
+            <TextBlock Text="$5,240" FontSize="18" FontWeight="SemiBold" Foreground="#22C55E" />
+          </StackPanel>
+        </Border>
+
+        <Border Grid.Column="2" Background="#F8F9FA" CornerRadius="12" Padding="16">
+          <StackPanel Spacing="4">
+            <TextBlock Text="Total Expenses" FontSize="12" Opacity="0.7" />
+            <TextBlock Text="$3,681" FontSize="18" FontWeight="SemiBold" Foreground="#EF4444" />
+          </StackPanel>
+        </Border>
+      </Grid>
+
+      <!-- Filters -->
+      <StackPanel Spacing="16">
+        <TextBlock Text="Filters" FontWeight="SemiBold" />
+        
+        <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="16">
+          <!-- Period Buttons -->
+          <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8">
+            <Button Content="All" Classes="filter active" />
+            <Button Content="This Month" Classes="filter" />
+            <Button Content="Last Month" Classes="filter" />
+            <Button Content="Last 3 Months" Classes="filter" />
+          </StackPanel>
+
+          <!-- Spacer -->
+          <Border Grid.Column="1" />
+
+          <!-- Type Filter -->
+          <ComboBox Grid.Column="2" MinWidth="120" SelectedIndex="0">
+            <ComboBoxItem>All Types</ComboBoxItem>
+            <ComboBoxItem>Income</ComboBoxItem>
+            <ComboBoxItem>Expenses</ComboBoxItem>
+          </ComboBox>
+
+          <!-- Category Filter -->
+          <ComboBox Grid.Column="3" MinWidth="140" SelectedIndex="0">
+            <ComboBoxItem>All Categories</ComboBoxItem>
+            <ComboBoxItem>Food - Dining</ComboBoxItem>
+            <ComboBoxItem>Transportation</ComboBoxItem>
+            <ComboBoxItem>Shopping</ComboBoxItem>
+            <ComboBoxItem>Entertainment</ComboBoxItem>
+            <ComboBoxItem>Bills</ComboBoxItem>
+            <ComboBoxItem>Salary</ComboBoxItem>
+            <ComboBoxItem>Freelance</ComboBoxItem>
+          </ComboBox>
+        </Grid>
+
+        <!-- Search -->
+        <TextBox Watermark="Search transactions..." 
+                 MinWidth="300"
+                 HorizontalAlignment="Left" />
+      </StackPanel>
+    </StackPanel>
+
+    <!-- Transaction List -->
+    <ScrollViewer Grid.Row="1" Margin="24">
+      <StackPanel Spacing="16">
+        
+        <!-- Today -->
+        <StackPanel Spacing="12">
+          <TextBlock Text="Today" 
+                     FontWeight="SemiBold" 
+                     FontSize="16" 
+                     Margin="0,16,0,0" />
+          
+          <StackPanel Spacing="1">
+            <!-- Transaction Item -->
+            <Border Background="White" 
+                    CornerRadius="8" 
+                    Padding="16"
+                    BorderBrush="#F3F4F6" 
+                    BorderThickness="1">
+              <Grid ColumnDefinitions="Auto,*,Auto,Auto">
+                <!-- Category Icon -->
+                <Border Grid.Column="0" 
+                        Background="#FEE2E2" 
+                        CornerRadius="8" 
+                        Width="40" 
+                        Height="40"
+                        Margin="0,0,12,0">
+                  <TextBlock Text="🍽️" 
+                             FontSize="18" 
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" />
+                </Border>
+
+                <!-- Details -->
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                  <TextBlock Text="Lunch at Pizza Palace" FontWeight="Medium" />
+                  <TextBlock Text="Food - Dining • 12:30 PM" 
+                             FontSize="12" 
+                             Opacity="0.7" />
+                </StackPanel>
+
+                <!-- Amount -->
+                <TextBlock Grid.Column="2" 
+                           Text="-$24.50" 
+                           FontSize="16" 
+                           FontWeight="SemiBold" 
+                           Foreground="#EF4444"
+                           VerticalAlignment="Center"
+                           Margin="0,0,12,0" />
+
+                <!-- Action Button -->
+                <Button Grid.Column="3" 
+                        Content="•••" 
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="#9CA3AF"
+                        VerticalAlignment="Center" />
+              </Grid>
+            </Border>
+
+            <Border Background="White" 
+                    CornerRadius="8" 
+                    Padding="16"
+                    BorderBrush="#F3F4F6" 
+                    BorderThickness="1">
+              <Grid ColumnDefinitions="Auto,*,Auto,Auto">
+                <Border Grid.Column="0" 
+                        Background="#DCFCE7" 
+                        CornerRadius="8" 
+                        Width="40" 
+                        Height="40"
+                        Margin="0,0,12,0">
+                  <TextBlock Text="💰" 
+                             FontSize="18" 
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                  <TextBlock Text="Freelance Payment" FontWeight="Medium" />
+                  <TextBlock Text="Freelance • 9:15 AM" 
+                             FontSize="12" 
+                             Opacity="0.7" />
+                </StackPanel>
+
+                <TextBlock Grid.Column="2" 
+                           Text="+$850.00" 
+                           FontSize="16" 
+                           FontWeight="SemiBold" 
+                           Foreground="#22C55E"
+                           VerticalAlignment="Center"
+                           Margin="0,0,12,0" />
+
+                <Button Grid.Column="3" 
+                        Content="•••" 
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="#9CA3AF"
+                        VerticalAlignment="Center" />
+              </Grid>
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Yesterday -->
+        <StackPanel Spacing="12">
+          <TextBlock Text="Yesterday" 
+                     FontWeight="SemiBold" 
+                     FontSize="16" 
+                     Margin="0,8,0,0" />
+          
+          <StackPanel Spacing="1">
+            <Border Background="White" 
+                    CornerRadius="8" 
+                    Padding="16"
+                    BorderBrush="#F3F4F6" 
+                    BorderThickness="1">
+              <Grid ColumnDefinitions="Auto,*,Auto,Auto">
+                <Border Grid.Column="0" 
+                        Background="#FEF3C7" 
+                        CornerRadius="8" 
+                        Width="40" 
+                        Height="40"
+                        Margin="0,0,12,0">
+                  <TextBlock Text="🚗" 
+                             FontSize="18" 
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                  <TextBlock Text="Gas Station" FontWeight="Medium" />
+                  <TextBlock Text="Transportation • 6:45 PM" 
+                             FontSize="12" 
+                             Opacity="0.7" />
+                </StackPanel>
+
+                <TextBlock Grid.Column="2" 
+                           Text="-$45.20" 
+                           FontSize="16" 
+                           FontWeight="SemiBold" 
+                           Foreground="#EF4444"
+                           VerticalAlignment="Center"
+                           Margin="0,0,12,0" />
+
+                <Button Grid.Column="3" 
+                        Content="•••" 
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="#9CA3AF"
+                        VerticalAlignment="Center" />
+              </Grid>
+            </Border>
+
+            <Border Background="White" 
+                    CornerRadius="8" 
+                    Padding="16"
+                    BorderBrush="#F3F4F6" 
+                    BorderThickness="1">
+              <Grid ColumnDefinitions="Auto,*,Auto,Auto">
+                <Border Grid.Column="0" 
+                        Background="#E0E7FF" 
+                        CornerRadius="8" 
+                        Width="40" 
+                        Height="40"
+                        Margin="0,0,12,0">
+                  <TextBlock Text="🛍️" 
+                             FontSize="18" 
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                  <TextBlock Text="Amazon Purchase" FontWeight="Medium" />
+                  <TextBlock Text="Shopping • 2:20 PM" 
+                             FontSize="12" 
+                             Opacity="0.7" />
+                </StackPanel>
+
+                <TextBlock Grid.Column="2" 
+                           Text="-$89.99" 
+                           FontSize="16" 
+                           FontWeight="SemiBold" 
+                           Foreground="#EF4444"
+                           VerticalAlignment="Center"
+                           Margin="0,0,12,0" />
+
+                <Button Grid.Column="3" 
+                        Content="•••" 
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="#9CA3AF"
+                        VerticalAlignment="Center" />
+              </Grid>
+            </Border>
+
+            <Border Background="White" 
+                    CornerRadius="8" 
+                    Padding="16"
+                    BorderBrush="#F3F4F6" 
+                    BorderThickness="1">
+              <Grid ColumnDefinitions="Auto,*,Auto,Auto">
+                <Border Grid.Column="0" 
+                        Background="#FEE2E2" 
+                        CornerRadius="8" 
+                        Width="40" 
+                        Height="40"
+                        Margin="0,0,12,0">
+                  <TextBlock Text="☕" 
+                             FontSize="18" 
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                  <TextBlock Text="Coffee Break" FontWeight="Medium" />
+                  <TextBlock Text="Food - Dining • 10:15 AM" 
+                             FontSize="12" 
+                             Opacity="0.7" />
+                </StackPanel>
+
+                <TextBlock Grid.Column="2" 
+                           Text="-$6.75" 
+                           FontSize="16" 
+                           FontWeight="SemiBold" 
+                           Foreground="#EF4444"
+                           VerticalAlignment="Center"
+                           Margin="0,0,12,0" />
+
+                <Button Grid.Column="3" 
+                        Content="•••" 
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="#9CA3AF"
+                        VerticalAlignment="Center" />
+              </Grid>
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- This Week -->
+        <StackPanel Spacing="12">
+          <TextBlock Text="Earlier This Week" 
+                     FontWeight="SemiBold" 
+                     FontSize="16" 
+                     Margin="0,8,0,0" />
+          
+          <StackPanel Spacing="1">
+            <Border Background="White" 
+                    CornerRadius="8" 
+                    Padding="16"
+                    BorderBrush="#F3F4F6" 
+                    BorderThickness="1">
+              <Grid ColumnDefinitions="Auto,*,Auto,Auto">
+                <Border Grid.Column="0" 
+                        Background="#DCFCE7" 
+                        CornerRadius="8" 
+                        Width="40" 
+                        Height="40"
+                        Margin="0,0,12,0">
+                  <TextBlock Text="💼" 
+                             FontSize="18" 
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                  <TextBlock Text="Monthly Salary" FontWeight="Medium" />
+                  <TextBlock Text="Salary • Monday 9:00 AM" 
+                             FontSize="12" 
+                             Opacity="0.7" />
+                </StackPanel>
+
+                <TextBlock Grid.Column="2" 
+                           Text="+$4,800.00" 
+                           FontSize="16" 
+                           FontWeight="SemiBold" 
+                           Foreground="#22C55E"
+                           VerticalAlignment="Center"
+                           Margin="0,0,12,0" />
+
+                <Button Grid.Column="3" 
+                        Content="•••" 
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="#9CA3AF"
+                        VerticalAlignment="Center" />
+              </Grid>
+            </Border>
+
+            <Border Background="White" 
+                    CornerRadius="8" 
+                    Padding="16"
+                    BorderBrush="#F3F4F6" 
+                    BorderThickness="1">
+              <Grid ColumnDefinitions="Auto,*,Auto,Auto">
+                <Border Grid.Column="0" 
+                        Background="#FEF3C7" 
+                        CornerRadius="8" 
+                        Width="40" 
+                        Height="40"
+                        Margin="0,0,12,0">
+                  <TextBlock Text="🏠" 
+                             FontSize="18" 
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" />
+                </Border>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                  <TextBlock Text="Monthly Rent" FontWeight="Medium" />
+                  <TextBlock Text="Bills • Sunday 8:00 AM" 
+                             FontSize="12" 
+                             Opacity="0.7" />
+                </StackPanel>
+
+                <TextBlock Grid.Column="2" 
+                           Text="-$1,200.00" 
+                           FontSize="16" 
+                           FontWeight="SemiBold" 
+                           Foreground="#EF4444"
+                           VerticalAlignment="Center"
+                           Margin="0,0,12,0" />
+
+                <Button Grid.Column="3" 
+                        Content="•••" 
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="#9CA3AF"
+                        VerticalAlignment="Center" />
+              </Grid>
+            </Border>
+          </StackPanel>
+        </StackPanel>
+
+        <!-- Load More Button -->
+        <Button Content="Load More Transactions"
+                HorizontalAlignment="Center"
+                Classes="secondary"
+                Margin="0,16,0,32" />
+
+      </StackPanel>
+    </ScrollViewer>
+  </Grid>
+
+  <!-- Styles -->
+  <UserControl.Styles>
+    <Style Selector="Button.filter">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="BorderBrush" Value="#D1D5DB" />
+      <Setter Property="Padding" Value="12,6" />
+      <Setter Property="CornerRadius" Value="6" />
+      <Setter Property="Foreground" Value="#374151" />
+      <Setter Property="FontSize" Value="14" />
+    </Style>
+
+    <Style Selector="Button.filter:pointerover">
+      <Setter Property="Background" Value="#F3F4F6" />
+      <Setter Property="BorderBrush" Value="#9CA3AF" />
+    </Style>
+
+    <Style Selector="Button.filter.active">
+      <Setter Property="Background" Value="#3B82F6" />
+      <Setter Property="BorderBrush" Value="#3B82F6" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <Style Selector="Button.filter.active:pointerover">
+      <Setter Property="Background" Value="#2563EB" />
+      <Setter Property="BorderBrush" Value="#2563EB" />
+    </Style>
+
+    <Style Selector="Button.secondary">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="BorderBrush" Value="#D1D5DB" />
+      <Setter Property="Padding" Value="16,8" />
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="Foreground" Value="#374151" />
+    </Style>
+
+    <Style Selector="Button.secondary:pointerover">
+      <Setter Property="Background" Value="#F3F4F6" />
+      <Setter Property="BorderBrush" Value="#9CA3AF" />
+    </Style>
+  </UserControl.Styles>
+
+</UserControl>

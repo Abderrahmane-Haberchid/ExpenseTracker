@@ -21,4 +21,14 @@ public partial class MainViewModel : ViewModelBase
     {
         CurrentPage = new AddTransactionViewModel();
     }
+    [RelayCommand]
+    private void Analytic()
+    {
+        CurrentPage = new AnalyticsViewModel();
+    }
+    [RelayCommand]
+    private void History()
+    {
+        CurrentPage = new HistoryViewModel();
+    }
 }

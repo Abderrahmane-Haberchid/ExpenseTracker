@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/abderahman/RiderProjects/ExpenseTrackerApi/ExpenseTrackerApi/ExpenseTrackerApi.csproj": {}
+    "/Users/abderahman/RiderProjects/ExTracker/ExpenseTrackerApi/ExpenseTrackerApi/ExpenseTrackerApi.csproj": {}
   },
   "projects": {
-    "/Users/abderahman/RiderProjects/ExpenseTrackerApi/ExpenseTrackerApi/ExpenseTrackerApi.csproj": {
+    "/Users/abderahman/RiderProjects/ExTracker/ExpenseTrackerApi/ExpenseTrackerApi/ExpenseTrackerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/abderahman/RiderProjects/ExpenseTrackerApi/ExpenseTrackerApi/ExpenseTrackerApi.csproj",
+        "projectUniqueName": "/Users/abderahman/RiderProjects/ExTracker/ExpenseTrackerApi/ExpenseTrackerApi/ExpenseTrackerApi.csproj",
         "projectName": "ExpenseTrackerApi",
-        "projectPath": "/Users/abderahman/RiderProjects/ExpenseTrackerApi/ExpenseTrackerApi/ExpenseTrackerApi.csproj",
+        "projectPath": "/Users/abderahman/RiderProjects/ExTracker/ExpenseTrackerApi/ExpenseTrackerApi/ExpenseTrackerApi.csproj",
         "packagesPath": "/Users/abderahman/.nuget/packages/",
-        "outputPath": "/Users/abderahman/RiderProjects/ExpenseTrackerApi/ExpenseTrackerApi/obj/",
+        "outputPath": "/Users/abderahman/RiderProjects/ExTracker/ExpenseTrackerApi/ExpenseTrackerApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/abderahman/.nuget/NuGet/NuGet.Config"
@@ -43,9 +43,31 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[6.5.0, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

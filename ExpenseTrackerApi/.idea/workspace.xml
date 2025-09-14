@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="45c686cd-34d6-43b8-b244-bf0c7c1c56b2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ExpenseTrackerApi/Entitys/Expense.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ExpenseTrackerApi/Entitys/Income.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ExpenseTrackerApi/config/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExpenseTracker/ExpenseTracker/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ExpenseTracker/ExpenseTracker/App.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExpenseTracker/ExpenseTracker/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExpenseTracker/ExpenseTracker/config/ExpenseTrackerContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExpenseTracker/ExpenseTracker/models/Expense.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExpenseTracker/ExpenseTracker/models/Income.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/Directory.Packages.props" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/ExpenseTracker.Android.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/MainActivity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/Properties/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/Resources/AboutResources.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/Resources/drawable-night-v31/avalonia_anim.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/Resources/drawable-v31/avalonia_anim.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/Resources/drawable/splash_screen.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/Resources/values-night/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/Resources/values-v31/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/Resources/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Android/Resources/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Browser/ExpenseTracker.Browser.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Browser/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Browser/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Browser/Properties/launchSettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Browser/runtimeconfig.template.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Browser/wwwroot/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Browser/wwwroot/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Browser/wwwroot/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Browser/wwwroot/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Desktop/ExpenseTracker.Desktop.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Desktop/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.Desktop/app.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.iOS/AppDelegate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.iOS/Entitlements.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.iOS/ExpenseTracker.iOS.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.iOS/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.iOS/Main.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.iOS/Resources/LaunchScreen.xib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/App.axaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/App.axaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Assets/Icons/food.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Assets/avalonia-logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Assets/menuImages/boy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Assets/menuImages/database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Assets/menuImages/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Assets/menuImages/logs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Assets/menuImages/sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Dtos/TransactionViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/ExpenseTracker.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/ViewLocator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/ViewModels/AddTransactionViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/ViewModels/HomeViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/ViewModels/MainViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/ViewModels/ViewModelBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Views/AddTransactionView.axaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Views/AddTransactionView.axaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Views/HomeView.axaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Views/HomeView.axaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Views/MainView.axaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Views/MainView.axaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Views/MainWindow.axaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/Views/MainWindow.axaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/config/ExpenseTrackerContext.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/models/Expense.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTracker/ExpenseTracker/models/Income.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/ExpenseTrackerApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/ExpenseTrackerApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/obj/Debug/net8.0/ExpenseTrackerApi.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/obj/Debug/net8.0/ExpenseTrackerApi.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/obj/Debug/net8.0/ExpenseTrackerApi.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/obj/Debug/net8.0/ExpenseTrackerApi.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/obj/Debug/net8.0/ExpenseTrackerApi.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/obj/Debug/net8.0/ExpenseTrackerApi.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/obj/Debug/net8.0/ExpenseTrackerApi.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/obj/Debug/net8.0/ExpenseTrackerApi.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/obj/Debug/net8.0/ExpenseTrackerApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/obj/Debug/net8.0/ExpenseTrackerApi.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/obj/ExpenseTrackerApi.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/obj/ExpenseTrackerApi.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/obj/ExpenseTrackerApi.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/obj/ExpenseTrackerApi.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/obj/ExpenseTrackerApi.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/obj/ExpenseTrackerApi.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpenseTrackerApi/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ExpenseTrackerApi/obj/project.nuget.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/ExpenseTrackerApi/Entitys/Expense.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ExpenseTrackerApi/Entitys/Income.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ExpenseTrackerApi/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ExpenseTrackerApi/config/AppDbContext.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="31yWiTVJrciLRvdQEGCkugU64GS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.ExpenseTrackerApi | #1.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/abderahman/RiderProjects/ExTracker/ExpenseTrackerApi&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="ExpenseTrackerApi | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/ExpenseTrackerApi/ExpenseTrackerApi.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.ExpenseTrackerApi | #1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45c686cd-34d6-43b8-b244-bf0c7c1c56b2" name="Changes" comment="" />
+      <created>1756496920120</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756496920120</updated>
+      <workItem from="1756496921238" duration="27000" />
+      <workItem from="1756497023598" duration="3255000" />
+      <workItem from="1756505556957" duration="618000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
