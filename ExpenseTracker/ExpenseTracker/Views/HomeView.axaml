@@ -243,78 +243,78 @@
             </Border>
 
             <!-- Smart Quick Actions with AI Suggestions -->
-            <StackPanel Spacing="20">
-                <Grid ColumnDefinitions="*,Auto">
-                    <TextBlock Grid.Column="0"
-                               Text="Smart Actions" 
-                               FontFamily="{StaticResource DisplayFont}"
-                               FontSize="22" 
-                               FontWeight="Bold" 
-                               Foreground="{StaticResource TextPrimaryBrush}" />
-                    <Button Grid.Column="1"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Padding="8">
-                        <TextBlock Text="🤖" FontSize="20" />
-                    </Button>
-                </Grid>
-                
-                <Grid RowDefinitions="Auto,Auto" RowSpacing="12">
-                    <!-- Primary Actions -->
-                    <Grid Grid.Row="0" ColumnDefinitions="*,*" ColumnSpacing="16">
-                        <Button Grid.Column="0" 
-                                Classes="neomorphic"
-                                Background="{StaticResource IncomeGradient}"
-                                Foreground="White">
-                            <Grid ColumnDefinitions="Auto,Auto,Auto">
-                                <Border Grid.Column="0"
-                                        Margin="-8,0,8,0">
-                                    <TextBlock Text="💰" 
-                                               FontSize="22"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center" />
-                                </Border>
-                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                                    <TextBlock Text="Add Income" 
-                                               FontFamily="{StaticResource TextFont}"
-                                               FontSize="16" 
-                                               FontWeight="SemiBold" />
-                                    <TextBlock Text="Quick entry" 
-                                               FontFamily="{StaticResource TextFont}"
-                                               FontSize="12"
-                                               Opacity="0.8" />
-                                </StackPanel>
-                            </Grid>
-                        </Button>
-                        
-                        <Button Grid.Column="1" 
-                                Classes="neomorphic"
-                                Background="{StaticResource ExpenseGradient}"
-                                Foreground="White">
-                            <Grid ColumnDefinitions="Auto,Auto,Auto">
-                                <Border Grid.Column="0"
-                                        Margin="-8,0,8,0">
-                                    <TextBlock Text="💳" 
-                                               FontSize="22"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center" />
-                                </Border>
-                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                                    <TextBlock Text="Add Expense" 
-                                               FontFamily="{StaticResource TextFont}"
-                                               FontSize="16" 
-                                               FontWeight="SemiBold" />
-                                    <TextBlock Text="Track spending" 
-                                               FontFamily="{StaticResource TextFont}"
-                                               FontSize="12"
-                                               Opacity="0.8" />
-                                </StackPanel>
-                            </Grid>
-                        </Button>
-                    </Grid>
-                    
-                </Grid>
-            </StackPanel>
+            <!-- <StackPanel Spacing="20"> -->
+            <!--     <Grid ColumnDefinitions="*,Auto"> -->
+            <!--         <TextBlock Grid.Column="0" -->
+            <!--                    Text="Smart Actions"  -->
+            <!--                    FontFamily="{StaticResource DisplayFont}" -->
+            <!--                    FontSize="22"  -->
+            <!--                    FontWeight="Bold"  -->
+            <!--                    Foreground="{StaticResource TextPrimaryBrush}" /> -->
+            <!--         <Button Grid.Column="1" -->
+            <!--                 Background="Transparent" -->
+            <!--                 BorderThickness="0" -->
+            <!--                 Padding="8"> -->
+            <!--             <TextBlock Text="🤖" FontSize="20" /> -->
+            <!--         </Button> -->
+            <!--     </Grid> -->
+            <!--      -->
+            <!--     <Grid RowDefinitions="Auto,Auto" RowSpacing="12"> -->
+            <!--         ~1~ Primary Actions @1@ -->
+            <!--         <Grid Grid.Row="0" ColumnDefinitions="*,*" ColumnSpacing="16"> -->
+            <!--             <Button Grid.Column="0"  -->
+            <!--                     Classes="neomorphic" -->
+            <!--                     Background="{StaticResource IncomeGradient}" -->
+            <!--                     Foreground="White"> -->
+            <!--                 <Grid ColumnDefinitions="Auto,Auto,Auto"> -->
+            <!--                     <Border Grid.Column="0" -->
+            <!--                             Margin="-8,0,8,0"> -->
+            <!--                         <TextBlock Text="💰"  -->
+            <!--                                    FontSize="22" -->
+            <!--                                    HorizontalAlignment="Center" -->
+            <!--                                    VerticalAlignment="Center" /> -->
+            <!--                     </Border> -->
+            <!--                     <StackPanel Grid.Column="1" VerticalAlignment="Center"> -->
+            <!--                         <TextBlock Text="Add Income"  -->
+            <!--                                    FontFamily="{StaticResource TextFont}" -->
+            <!--                                    FontSize="16"  -->
+            <!--                                    FontWeight="SemiBold" /> -->
+            <!--                         <TextBlock Text="Quick entry"  -->
+            <!--                                    FontFamily="{StaticResource TextFont}" -->
+            <!--                                    FontSize="12" -->
+            <!--                                    Opacity="0.8" /> -->
+            <!--                     </StackPanel> -->
+            <!--                 </Grid> -->
+            <!--             </Button> -->
+            <!--              -->
+            <!--             <Button Grid.Column="1"  -->
+            <!--                     Classes="neomorphic" -->
+            <!--                     Background="{StaticResource ExpenseGradient}" -->
+            <!--                     Foreground="White"> -->
+            <!--                 <Grid ColumnDefinitions="Auto,Auto,Auto"> -->
+            <!--                     <Border Grid.Column="0" -->
+            <!--                             Margin="-8,0,8,0"> -->
+            <!--                         <TextBlock Text="💳"  -->
+            <!--                                    FontSize="22" -->
+            <!--                                    HorizontalAlignment="Center" -->
+            <!--                                    VerticalAlignment="Center" /> -->
+            <!--                     </Border> -->
+            <!--                     <StackPanel Grid.Column="1" VerticalAlignment="Center"> -->
+            <!--                         <TextBlock Text="Add Expense"  -->
+            <!--                                    FontFamily="{StaticResource TextFont}" -->
+            <!--                                    FontSize="16"  -->
+            <!--                                    FontWeight="SemiBold" /> -->
+            <!--                         <TextBlock Text="Track spending"  -->
+            <!--                                    FontFamily="{StaticResource TextFont}" -->
+            <!--                                    FontSize="12" -->
+            <!--                                    Opacity="0.8" /> -->
+            <!--                     </StackPanel> -->
+            <!--                 </Grid> -->
+            <!--             </Button> -->
+            <!--         </Grid> -->
+            <!--          -->
+            <!--     </Grid> -->
+            <!-- </StackPanel> -->
 
             <!-- Enhanced Recent Transactions -->
             <StackPanel Spacing="20">
