@@ -10,6 +10,6 @@ public partial class AddTransactionView : UserControl
     public AddTransactionView()
     {
         InitializeComponent();
-        DataContext = new AddTransactionViewModel(new AppDbContext(null));
+        DataContext = new AddTransactionViewModel();
     }
 }

@@ -5,6 +5,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using ExpenseTracker.Configuration;
+using ExpenseTracker.DependecyInejction;
 using ExpenseTracker.ViewModels;
 using ExpenseTracker.Views;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,9 @@ namespace ExpenseTracker;
 
 public partial class App : Application
 {
+    // This is a service provider will allow us to access services to inject
+    public static IServiceProvider ServiceProvider { get; private set; } = default!;
+
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -21,6 +25,29 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        
+        // Initiliazing services collection
+        var collection = new ServiceCollection();
+        collection.AddCommonServices();
+        
+        // Building services and assign them to ServiceProvider Object
+        ServiceProvider = collection.BuildServiceProvider();
+        
+        // Ensuring db has been created for Native AOT
+        using (var scope = ServiceProvider.CreateScope())
+        {
+            try
+            {
+                scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.EnsureCreated();
+                Console.WriteLine("Database Migrated successfully");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("falied to create database ; " + e.Message);
+                throw;
+            }
+        }   
+        
         var mainView = new MainView
         {
             DataContext = new MainViewModel()
@@ -40,31 +67,9 @@ public partial class App : Application
                 singleViewLifetime.MainView = mainView;
                 break;
         }
+        
 
         base.OnFrameworkInitializationCompleted();
     }
-
-    private void ConfigureServices(IServiceCollection services)
-    {
-        services.AddDbContext<AppDbContext>( options =>
-        {
-            var LocalFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            var DbPath = Path.Combine(LocalFolderPath, "ExpenseTracker", "ExpenseTracker.db");
-            options.UseSqlite($"Data Source={DbPath}");
-        } );
-        
-        // Registring ViewModels
-        services.AddTransient<AddTransactionViewModel>();
-        services.AddTransient<AnalyticsViewModel>();
-        services.AddTransient<HistoryViewModel>();
-        services.AddTransient<HomeViewModel>();
-        services.AddTransient<MainViewModel>();
-        
-        // Registring Views
-        services.AddTransient<MainWindow>();
-        services.AddTransient<AddTransactionView>();
-        services.AddTransient<AnalyticsView>();
-        services.AddTransient<HistoryView>();
-        services.AddTransient<HomeView>();
-    }
+    
 }

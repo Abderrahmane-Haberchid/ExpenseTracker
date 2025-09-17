@@ -20,7 +20,7 @@ public partial class MainViewModel : ViewModelBase
     [RelayCommand]
     private void AddTransaction()
     {
-        CurrentPage = new AddTransactionViewModel(new AppDbContext(null));
+        CurrentPage = new AddTransactionViewModel();
     }
     [RelayCommand]
     private void Analytic()

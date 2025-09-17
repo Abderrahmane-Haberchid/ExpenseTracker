@@ -1,8 +1,10 @@
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
-using ExpenseTracker.Enum;
+using ExpenseTracker.Configuration;
 using ExpenseTracker.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ExpenseTracker.ViewModels;
 
@@ -14,96 +16,44 @@ public partial class HomeViewModel : ViewModelBase
 
     [ObservableProperty]
     private string _recentTransactionText;
+    
+    private AppDbContext _appDbContext;
+
+    public HomeViewModel(AppDbContext appDbContext)
+    {
+        _appDbContext = appDbContext;
+        Load();
+    }
 
     public ObservableCollection<TransactionModel> RecentTransactions { get; } = new();
     
-    public HomeViewModel()
+    public HomeViewModel() : this(App.ServiceProvider.GetRequiredService<AppDbContext>() ?? throw new InvalidOperationException("Not able to initialize AppDbContext Service"))
     {
-        // Populate with dummy data for demonstration
-        RecentTransactions.Add(new TransactionModel
-        {
-            Name = "Groceries",
-            Amount = 150.75m,
-            Category = "Food",
-            Date = DateTime.Now,
-            Type = TransactionType.EXPENSE,
-            Notes = "This is monthly grocery shoping"
-        });
-        RecentTransactions.Add(new TransactionModel
-        {
-            Name = "Argent Loyer",
-            Amount = 150.75m,
-            Category = "Food",
-            Date = DateTime.Now,
-            Type = TransactionType.INCOME,
-            Notes = "This is monthly grocery shoping"
-        });
-        RecentTransactions.Add(new TransactionModel
-        {
-            Name = "Salaire Job",
-            Amount = 150.75m,
-            Category = "Food",
-            Date = DateTime.Now,
-            Type = TransactionType.INCOME,
-            Notes = "This is monthly grocery shoping"
-        });
-        RecentTransactions.Add(new TransactionModel
-        {
-            Name = "Groceries",
-            Amount = 150.75m,
-            Category = "Food",
-            Date = DateTime.Now,
-            Type = TransactionType.EXPENSE,
-            Notes = "This is monthly grocery shoping"
-        });
-        RecentTransactions.Add(new TransactionModel
-        {
-            Name = "Groceries",
-            Amount = 150.75m,
-            Category = "Food",
-            Date = DateTime.Now,
-            Type = TransactionType.EXPENSE,
-            Notes = "This is monthly grocery shoping"
-        });
-        RecentTransactions.Add(new TransactionModel
-        {
-            Name = "Groceries",
-            Amount = 150.75m,
-            Category = "Food",
-            Date = DateTime.Now,
-            Type = TransactionType.EXPENSE,
-            Notes = "This is monthly grocery shoping"
-        });
-        RecentTransactions.Add(new TransactionModel
-        {
-            Name = "Groceries",
-            Amount = 150.75m,
-            Category = "Food",
-            Date = DateTime.Now,
-            Type = TransactionType.EXPENSE,
-            Notes = "This is monthly grocery shoping"
-        });
-        RecentTransactions.Add(new TransactionModel
-        {
-            Name = "Groceries",
-            Amount = 150.75m,
-            Category = "Food",
-            Date = DateTime.Now,
-            Type = TransactionType.EXPENSE,
-            Notes = "This is monthly grocery shoping"
-        });
-        RecentTransactions.Add(new TransactionModel
-        {
-            Name = "Groceries",
-            Amount = 150.75m,
-            Category = "Food",
-            Date = DateTime.Now,
-            Type = TransactionType.EXPENSE,
-            Notes = "This is monthly grocery shoping"
-        });
         
-        RecentTransactionText = $"Recent Transactions({RecentTransactions.Count})";
     }
+    
+    public void Load()
+    {
+
+        try
+        {
+            var allTransactions = _appDbContext.Transactions.ToList();
+
+            RecentTransactions.Clear();
+            foreach (var transaction in allTransactions)
+            {
+                RecentTransactions.Add(transaction);
+            }
+
+            RecentTransactionText = $"Recent Transactions ({RecentTransactions.Count})";
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error loading transactions: " + e.Message);
+        }
+    }
+    
+    
     
     
 }
